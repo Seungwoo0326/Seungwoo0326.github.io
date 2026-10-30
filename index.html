@@ -1,166 +1,182 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta charset="utf-8">
+  <title>Seungu Han</title>
+  <meta name="author" content="Seungu Han">
+  <meta name="description" content="Seungu Han — Ph.D. student at Seoul National University researching speech enhancement, speech representation learning, and diffusion models.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    body { margin: 0; line-height: 1.6; color: #222; }
+    main { max-width: 800px; margin: 0 auto; padding: 20px 24px 48px; box-sizing: border-box; }
+    .profile { display: flex; align-items: center; gap: 32px; padding: 0 0 12px; }
+    .profile-copy { flex: 1; min-width: 0; }
+    h1.name { text-align: center; font-weight: normal; }
+    .profile-photo { width: 30%; flex-shrink: 0; }
+    .profile-photo img { display: block; width: 100%; height: auto; border-radius: 50%; }
+    .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; }
+    section { margin-top: 32px; }
+    h2 { margin-bottom: 16px; }
+    h3 { font-size: 16px; margin: 24px 0 12px; }
+    .entry { margin: 0 0 20px; }
+    .entry-heading { display: flex; justify-content: space-between; gap: 8px 24px; }
+    .date { white-space: nowrap; color: #555; }
+    .location, .note { color: #555; }
+    ul { margin: 6px 0 0; padding-left: 22px; }
+    .publications { list-style: none; margin: 0; padding: 0; }
+    .publication { padding: 12px 16px; margin: 0 0 8px; }
+    .publication.highlight { background: #ffffd0; }
+    .publication p { margin: 3px 0 0; }
+    .status { font-weight: bold; }
+    .source-note { font-size: 12px; color: #666; margin-top: 10px; }
+    @media (max-width: 600px) {
+      main { padding: 16px 20px 36px; }
+      .profile { flex-direction: column-reverse; gap: 4px; }
+      .profile-photo { width: 160px; max-width: 55%; }
+      .entry-heading { flex-direction: column; gap: 0; }
+      .publication { padding: 12px 10px; }
+      h1.name { padding-top: 12px; }
+    }
+    @media print {
+      main { max-width: none; padding: 0; }
+      .publication, .entry { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="profile">
+      <div class="profile-copy">
+        <h1 class="name">Seungu Han</h1>
+        <p>I'm Seungu Han, a Ph.D. student in the Department of Intelligence and Information at Seoul National University and a member of the Music &amp; Audio Research Group (MARG), advised by Professor Kyogu Lee.</p>
+        <p>My research focuses on speech enhancement, speech representation learning, and diffusion models.</p>
+        <nav class="contact" aria-label="Contact and profiles">
+          <a href="mailto:hansw0326@snu.ac.kr">Email</a>
+          <a href="https://scholar.google.com/citations?authuser=1&amp;user=GTu0FqkAAAAJ">Google Scholar</a>
+          <a href="https://github.com/Seungwoo0326">GitHub</a>
+          <a href="https://www.linkedin.com/in/%EC%8A%B9%EC%9A%B0-%ED%95%9C-543521245/">LinkedIn</a>
+        </nav>
+      </div>
+      <a class="profile-photo" href="images/seunguhan.jpg"><img src="images/seunguhan.jpg" alt="Seungu Han"></a>
+    </header>
 
-    <title>Seungu Han</title>
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="entry">
+        <div class="entry-heading"><strong>Music &amp; Audio Research Group, Seoul National University</strong><span class="date">Sept. 2024 – Present</span></div>
+        <div>Ph.D. Student, Department of Intelligence and Information</div>
+        <div class="location">Seoul, Korea</div>
+      </div>
+      <div class="entry">
+        <div class="entry-heading"><strong>Seoul National University</strong><span class="date">Mar. 2018 – Aug. 2024</span></div>
+        <div>B.S., Mechanical Engineering &amp; Industrial Engineering</div>
+        <div class="location">Seoul, Korea</div>
+        <ul><li>2-year absence to fulfill mandatory military service (Aug. 2020 – Jul. 2022).</li></ul>
+      </div>
+    </section>
 
-    <meta name="author" content="Seungu Han">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+    <section aria-labelledby="experience">
+      <h2 id="experience">Professional Experience</h2>
+      <div class="entry">
+        <div class="entry-heading"><strong>Supertone, Inc.</strong><span class="date">Nov. 2022 – Aug. 2024</span></div>
+        <div>Research Intern <span class="location">· Seoul, Korea</span></div>
+        <ul>
+          <li>Developed studio-quality universal speech enhancement.</li>
+          <li>Worked part-time during semesters and full-time during vacations.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-heading"><strong>Maum AI, Inc.</strong><span class="date">Aug. 2020 – Oct. 2022</span></div>
+        <div>AI Scientist (Audio) <span class="location">· Seongnam, Korea</span></div>
+        <ul>
+          <li>Worked on speech separation, audio super-resolution, and TTS.</li>
+          <li>Served as a substitute for mandatory military service (Aug. 2020 – Jul. 2022) while contributing as an AI scientist.</li>
+        </ul>
+      </div>
+    </section>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Seungu Han
-                </p>
-                <p>I'm Seungu Han, a Ph.D. student at the Seoul National University Music and Audio Research Group (MARG), advised by Professor Kyogu Lee.
-                </p>
-                <p>
-                  My research focuses on speech enhancement, speech representation learning, and diffusion models.
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:hansw0326@snu.ac.kr">Email</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?authuser=1&user=GTu0FqkAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/Seungwoo0326">Github</a>
-      &nbsp;/&nbsp;
-      <a href="https://www.linkedin.com/in/%EC%8A%B9%EC%9A%B0-%ED%95%9C-543521245/">Linkedin</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/seunguhan.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/seunguhan.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  I'm interested in speech processing and deep learning. Most of my research is about speech enhancement. Some papers are <span class="highlight">highlighted</span>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr onmouseout="r2r_stop()" onmouseover="r2r_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2506.01460">
-          <span class="papertitle">Few-step Adversarial Schrödinger Bridge for Generative Speech Enhancement</span>
-        </a>
-        <br>
-        <strong>Seungu Han</strong>,
-        Sungho Lee,
-        Juheon Lee,
-        Kyogu Lee
-        <br>
-        <em>Interspeech</em>, 2025 (Oral)
-        <br>
-        <em>Nominated for Interspeech 2025 Best Student Paper Award (final results TBD).</em>
-        <p></p>
-      </td>
-    </tr>
-    <tr onmouseout="simvs_stop()" onmouseover="simvs_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://ieeexplore.ieee.org/abstract/document/10096374">
-          <span class="papertitle">PHASEAUG: A Differentiable Augmentation for Speech Synthesis to Simulate One-to-Many Mapping</span>
-        </a>
-        <br>
-        Junhyeok Lee,
-        <strong>Seungu Han</strong>,
-        Hyunjae Cho,
-        Wonbin Jung
-        <br>
-        <em>ICASSP</em>, 2023
-        <p></p>
-      </td>
-    </tr>
-    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2206.08545">
-    <span class="papertitle">NU-Wave 2: A General Neural Audio Upsampling Model for Various Sampling Rates</span>
-        </a>
-        <br>
-        <strong>Seungu Han</strong>,
-        Junhyeok Lee
-        <br>
-        <em>Interspeech</em>, 2022 (Oral)
-        <p></p>
-      </td>
-    </tr>
-    <tr onmouseout="power_stop()" onmouseover="power_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2104.02321">
-    <span class="papertitle">NU-Wave: A Diffusion Probabilistic Model for Neural Audio Upsampling</span>
-        </a>
-        <br>
-        Junhyeok Lee,
-        <strong>Seungu Han</strong>
-        <br>
-        <em>Interspeech</em>, 2021
-        <p></p>
-      </td>
-    </tr>
-          </tbody></table>
+    <section aria-labelledby="publications">
+      <h2 id="publications">Publications</h2>
+      <h3>First-Author Publications</h3>
+      <ol class="publications">
+        <li class="publication">
+          <span class="papertitle">UNISE: Unified Noise-Invariant Learning for Speech Enhancement Toward Improved Content Preservation</span>
+          <p><strong>Seungu Han</strong>, Sungho Lee, Eungbeom Kim, Seaone Ok, Kyogu Lee</p>
+          <p class="status">Under Review</p>
+        </li>
+        <li class="publication">
+          <span class="papertitle">Interpreting and Reducing Hallucinations in Generative Speech Enhancement with Sparse Autoencoders</span>
+          <p><strong>Seungu Han</strong>, Kyogu Lee</p>
+          <p class="status">Under Review</p>
+        </li>
+        <li class="publication">
+          <span class="papertitle">Rethinking Speech Representation Aggregation in Speech Enhancement: a Phonetic Mutual Information Perspective</span>
+          <p><strong>Seungu Han</strong>, Sungho Lee, Kyogu Lee</p>
+          <p><em>ICASSP</em>, 2026</p>
+        </li>
+        <li class="publication highlight">
+          <a class="papertitle" href="https://arxiv.org/abs/2506.01460">Few-step Adversarial Schrödinger Bridge for Generative Speech Enhancement</a>
+          <p><strong>Seungu Han</strong>, Sungho Lee, Juheon Lee, Kyogu Lee</p>
+          <p><em>Interspeech</em>, 2025 <strong>(Oral)</strong></p>
+          <p><em>Nominated for Interspeech 2025 Best Student Paper Award.</em></p>
+        </li>
+        <li class="publication">
+          <a class="papertitle" href="https://arxiv.org/abs/2206.08545">NU-Wave 2: A General Neural Audio Upsampling Model for Various Sampling Rates</a>
+          <p><strong>Seungu Han</strong>, Junhyeok Lee</p>
+          <p><em>Interspeech</em>, 2022 <strong>(Oral)</strong></p>
+        </li>
+      </ol>
 
-          
-          <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
-            <tr>
-              <td>
-                <h2>Miscellanea</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            
-            
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-                    <div class="colored-box" style="background-color: #fcb97d;">
-                     <h2>Competitions</h2>
-                     </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                URGENT 2024 Challenge, 5th place (NeurIPS 2024 Competition Track)
-                <br>
-                2nd place in Mean Opinion Score (MOS) evaluation (subjective metric).
-              </td>
-            </tr>
+      <h3>Co-Authored Publications</h3>
+      <ol class="publications">
+        <li class="publication">
+          <span class="papertitle">Toward Privacy-Preserving ASR: Speaker-Level Machine Unlearning</span>
+          <p>Seaone Ok, <strong>Seungu Han</strong>, Eungbeom Kim, Kyogu Lee</p>
+          <p><em>Interspeech</em>, 2026</p>
+        </li>
+        <li class="publication">
+          <span class="papertitle">Cross-Modal Bottleneck Fusion for Noise Robust Audio-Visual Speech Recognition</span>
+          <p>Seaone Ok, Min Jun Choi, Eungbeom Kim, <strong>Seungu Han</strong>, Kyogu Lee</p>
+          <p><em>ICASSP</em>, 2026</p>
+        </li>
+        <li class="publication">
+          <span class="papertitle">Differentiable Acoustic Radiance Transfer</span>
+          <p>Sungho Lee, Matteo Scerbo, <strong>Seungu Han</strong>, Min Jun Choi, Kyogu Lee, Enzo De Sena</p>
+          <p><em>IEEE Transactions on Audio, Speech and Language Processing</em></p>
+        </li>
+        <li class="publication">
+          <a class="papertitle" href="https://ieeexplore.ieee.org/abstract/document/10096374">PHASEAUG: A Differentiable Augmentation for Speech Synthesis to Simulate One-to-Many Mapping</a>
+          <p>Junhyeok Lee, <strong>Seungu Han</strong>, Hyunjae Cho, Wonbin Jung</p>
+          <p><em>ICASSP</em>, 2023</p>
+        </li>
+        <li class="publication">
+          <a class="papertitle" href="https://arxiv.org/abs/2104.02321">NU-Wave: A Diffusion Probabilistic Model for Neural Audio Upsampling</a>
+          <p>Junhyeok Lee, <strong>Seungu Han</strong></p>
+          <p><em>Interspeech</em>, 2021</p>
+        </li>
+      </ol>
+    </section>
 
+    <section aria-labelledby="competitions">
+      <h2 id="competitions">Competitions</h2>
+      <div class="entry">
+        <div class="entry-heading"><strong>URGENT 2024 Challenge, 5th place</strong><span class="date">Dec. 2024</span></div>
+        <div>NeurIPS 2024 Competition Track</div>
+        <ul><li>2nd place in Mean Opinion Score (MOS) evaluation (subjective metric).</li></ul>
+      </div>
+    </section>
 
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-                    <div class="colored-box" style="background-color: #aaba9e;">
-                     <h2>Open Source</h2>
-                     </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <a href="https://github.com/mindslab-ai/nu-wave-2">Official implementation of NU-Wave 2 (290 stars)</a>
-                <br>
-                <a href="https://github.com/Seungwoo0326/wavegrad2-unofficial">Unofficial implementation of WaveGrad2 (112 stars)</a>
-                <br>
-                <a href="https://github.com/mindslab-ai/nu-wave">Official implementation of NU-Wave (283 stars)</a>
-              </td>
-            </tr>
-          
-        </td>
-      </tr>
-    </table>
-  </body>
+    <section aria-labelledby="open-source">
+      <h2 id="open-source">Open Source Contributions</h2>
+      <ul>
+        <li><a href="https://github.com/mindslab-ai/nu-wave-2">Official implementation of <strong>NU-Wave 2</strong></a> (315 stars).</li>
+        <li><a href="https://github.com/Seungwoo0326/wavegrad2-unofficial">Unofficial implementation of <strong>WaveGrad2</strong></a> (111 stars), released prior to the official code.</li>
+        <li><a href="https://github.com/mindslab-ai/nu-wave">Official implementation of <strong>NU-Wave</strong></a> (283 stars).</li>
+      </ul>
+      <p class="source-note">Star counts as listed in my résumé.</p>
+    </section>
+  </main>
+</body>
 </html>
