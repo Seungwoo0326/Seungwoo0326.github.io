@@ -9,39 +9,66 @@
   <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="stylesheet.css">
   <style>
-    body { margin: 0; line-height: 1.6; color: #222; }
-    main { max-width: 800px; margin: 0 auto; padding: 20px 24px 48px; box-sizing: border-box; }
-    .profile { display: flex; align-items: center; gap: 32px; padding: 0 0 12px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; line-height: 1.55; color: #222; background: #fff; }
+    main { max-width: 900px; margin: auto; padding: 36px 28px 48px; }
+    .profile { display: flex; align-items: center; gap: 36px; margin-bottom: 28px; }
     .profile-copy { flex: 1; min-width: 0; }
-    h1.name { text-align: center; font-weight: normal; }
-    .profile-photo { width: 30%; flex-shrink: 0; }
+    h1.name { padding: 0; margin: 0 0 14px; font-weight: normal; font-size: 34px; }
+    .profile-copy p { margin: 10px 0; }
+    .profile-photo { width: 170px; flex-shrink: 0; }
     .profile-photo img { display: block; width: 100%; height: auto; border-radius: 50%; }
-    .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; }
-    section { margin-top: 32px; }
-    h2 { margin-bottom: 16px; }
-    h3 { font-size: 16px; margin: 24px 0 12px; }
-    .entry { margin: 0 0 20px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 16px; }
+    .page-nav { display: flex; gap: 20px; flex-wrap: wrap; padding: 12px 0; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+    section { margin-top: 32px; scroll-margin-top: 20px; }
+    h2 { font-size: 24px; margin-bottom: 18px; }
+    h3 { font-size: 16px; margin: 20px 0 12px; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+    .section-heading a { white-space: nowrap; }
+    .publications { list-style: none; padding: 0; margin: 0; }
+    .publication { padding: 18px 0; border-bottom: 1px solid #eee; }
+    .publication:last-child { border-bottom: 0; }
+    .publication.featured { display: grid; grid-template-columns: 174px minmax(0,1fr); align-items: center; gap: 24px; padding: 20px 14px; margin: 0 -14px 6px; border: 0; }
+    .publication.highlight { background: #fffde8; border-radius: 4px; }
+    .paper-figure img { display: block; width: 100%; height: 128px; object-fit: contain; background: white; }
+    .paper-copy { min-width: 0; }
+    .papertitle { font-size: 16px; line-height: 1.4; font-weight: 700; }
+    .publication p { margin: 4px 0 0; }
+    .publication .paper-summary { margin-top: 9px; color: #444; }
+    .paper-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .paper-links a { font-size: 12px; line-height: 1.4; border: 1px solid #b6c7d8; border-radius: 3px; padding: 3px 9px; }
+    .paper-links a:hover, .paper-links a:focus-visible { background: #eef5fc; color: #125a9f; border-color: #1772d0; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid #1772d0; outline-offset: 3px; }
+    .award { color: #9c4c0b; font-weight: 700; }
+    .status { color: #666; font-style: italic; }
+    .background-summary { color: #555; margin: -6px 0 14px; }
+    details { border-top: 1px solid #e5e5e5; padding-top: 14px; }
+    summary { color: #1772d0; cursor: pointer; }
+    .entry { margin: 0 0 18px; }
     .entry-heading { display: flex; justify-content: space-between; gap: 8px 24px; }
     .date { white-space: nowrap; color: #555; }
-    .location, .note { color: #555; }
+    .location { color: #555; }
     ul { margin: 6px 0 0; padding-left: 22px; }
-    .publications { list-style: none; margin: 0; padding: 0; }
-    .publication { padding: 12px 16px; margin: 0 0 8px; }
-    .publication.highlight { background: #ffffd0; }
-    .publication p { margin: 3px 0 0; }
-    .status { font-weight: bold; }
-    .source-note { font-size: 12px; color: #666; margin-top: 10px; }
+    .source-note { font-size: 12px; color: #666; }
     @media (max-width: 600px) {
-      main { padding: 16px 20px 36px; }
-      .profile { flex-direction: column-reverse; gap: 4px; }
-      .profile-photo { width: 160px; max-width: 55%; }
+      main { padding: 24px 20px 36px; }
+      .profile { position: relative; display: block; padding-top: 4px; }
+      .profile-copy h1 { padding-right: 96px; min-height: 76px; display: flex; align-items: center; font-size: 30px; }
+      .profile-photo { position: absolute; top: 0; right: 0; width: 76px; }
+      .profile-photo img { height: 86px; object-fit: cover; object-position: top; }
+      .publication.featured { display: block; padding: 16px 10px; margin: 0 -10px 8px; }
+      .paper-figure { display: block; width: 174px; margin: 0 0 14px; }
+      .paper-figure img { height: 108px; }
       .entry-heading { flex-direction: column; gap: 0; }
-      .publication { padding: 12px 10px; }
-      h1.name { padding-top: 12px; }
+      .section-heading { flex-wrap: wrap; gap: 0 12px; margin-bottom: 8px; }
+      .section-heading h2 { margin-bottom: 4px; }
     }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media print {
       main { max-width: none; padding: 0; }
       .publication, .entry { break-inside: avoid; }
+      .page-nav { display: none; }
     }
   </style>
 </head>
@@ -50,7 +77,7 @@
     <header class="profile">
       <div class="profile-copy">
         <h1 class="name">Seungu Han</h1>
-        <p>I'm Seungu Han, a Ph.D. student in the Department of Intelligence and Information at Seoul National University and a member of the Music &amp; Audio Research Group (MARG), advised by Professor Kyogu Lee.</p>
+        <p>I'm a Ph.D. student at Seoul National University's Music &amp; Audio Research Group (MARG), advised by Professor Kyogu Lee.</p>
         <p>My research focuses on speech enhancement, speech representation learning, and diffusion models.</p>
         <nav class="contact" aria-label="Contact and profiles">
           <a href="mailto:hansw0326@snu.ac.kr">Email</a>
@@ -62,6 +89,68 @@
       <a class="profile-photo" href="images/seunguhan.jpg"><img src="images/seunguhan.jpg" alt="Seungu Han"></a>
     </header>
 
+    <nav class="page-nav" aria-label="Page sections"><a href="#publications">Publications</a><a href="#under-review">Under Review</a><a href="#background">Background</a></nav>
+    <section aria-labelledby="publications">
+      <div class="section-heading"><h2 id="publications">Selected Publications</h2><a href="https://scholar.google.com/citations?user=GTu0FqkAAAAJ">Google Scholar ↗</a></div>
+      <ol class="publications"><li class="publication featured"><a class="paper-figure" href="https://arxiv.org/abs/2601.22480"><img src="https://arxiv.org/html/2601.22480v1/figures/comparison_avg_mi_vs_layer_overall.png" alt="Layer-wise phonetic mutual information across speech representation models" width="174" height="128"></a><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2601.22480">Rethinking Speech Representation Aggregation in Speech Enhancement: a Phonetic Mutual Information Perspective</a>
+          <p><strong>Seungu Han</strong>, Sungho Lee, Kyogu Lee</p>
+          <p><em>ICASSP</em>, 2026</p>
+<p class="paper-summary">A linguistic aggregation layer preserves phonetic information in noisy speech representations and improves content preservation in speech enhancement.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2601.22480">Paper</a><a href="https://arxiv.org/pdf/2601.22480">PDF</a></div></div></li>
+<li class="publication featured highlight"><a class="paper-figure" href="https://arxiv.org/abs/2506.01460"><img src="https://arxiv.org/html/2506.01460v1/plot_reverb_v2_2.svg" alt="Speech dereverberation results across different sampling steps" width="174" height="128"></a><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2506.01460">Few-step Adversarial Schrödinger Bridge for Generative Speech Enhancement</a>
+          <p><strong>Seungu Han</strong>, Sungho Lee, Juheon Lee, Kyogu Lee</p>
+          <p><em>Interspeech</em>, 2025 <strong>(Oral)</strong></p>
+          <p class="award">Nominated for Interspeech 2025 Best Student Paper Award.</p>
+<p class="paper-summary">Combining adversarial training with a Schrödinger bridge enables speech denoising and dereverberation with as few as one inference step.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2506.01460">Paper</a><a href="https://arxiv.org/pdf/2506.01460">PDF</a><a href="https://tame-headstand-35a.notion.site/SB-UFOGen-Demo-19f81748633e80379294dbb48e6e3a3d">Audio samples</a></div></div></li>
+<li class="publication featured"><a class="paper-figure" href="https://arxiv.org/abs/2206.08545"><img src="https://arxiv.org/html/2206.08545v2/model_figure.svg" alt="NU-Wave 2 network architecture" width="174" height="128"></a><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2206.08545">NU-Wave 2: A General Neural Audio Upsampling Model for Various Sampling Rates</a>
+          <p><strong>Seungu Han</strong>, Junhyeok Lee</p>
+          <p><em>Interspeech</em>, 2022 <strong>(Oral)</strong></p>
+<p class="paper-summary">A single diffusion model upsamples audio from varying input sampling rates to 48 kHz, with bandwidth conditioning and improved harmonic reconstruction.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2206.08545">Paper</a><a href="https://arxiv.org/pdf/2206.08545">PDF</a><a href="https://github.com/maum-ai/nuwave2">Code</a></div></div></li></ol>
+    </section>
+    <section aria-labelledby="coauthored">
+      <h2 id="coauthored">Co-Authored Publications</h2>
+      <ol class="publications"><li class="publication"><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2610.16196">Toward Privacy-Preserving ASR: Speaker-Level Machine Unlearning</a>
+          <p>Seaone Ok, <strong>Seungu Han</strong>, Eungbeom Kim, Kyogu Lee</p>
+          <p><em>Interspeech</em>, 2026</p>
+<p class="paper-summary">Feature-level unlearning removes speaker-specific information from ASR representations while preserving transcription performance.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2610.16196">Paper</a><a href="https://arxiv.org/pdf/2610.16196">PDF</a></div></div></li>
+<li class="publication"><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2602.08293">Cross-Modal Bottleneck Fusion for Noise Robust Audio-Visual Speech Recognition</a>
+          <p>Seaone Ok, Min Jun Choi, Eungbeom Kim, <strong>Seungu Han</strong>, Kyogu Lee</p>
+          <p><em>ICASSP</em>, 2026</p>
+<p class="paper-summary">CoBRA uses compact bottleneck tokens to exchange audio and visual information for robust speech recognition under noise.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2602.08293">Paper</a><a href="https://arxiv.org/pdf/2602.08293">PDF</a></div></div></li>
+<li class="publication"><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2509.15946">Differentiable Acoustic Radiance Transfer</a>
+          <p>Sungho Lee, Matteo Scerbo, <strong>Seungu Han</strong>, Min Jun Choi, Kyogu Lee, Enzo De Sena</p>
+          <p><em>IEEE Transactions on Audio, Speech and Language Processing</em></p>
+<p class="paper-summary">Differentiable acoustic radiance transfer learns room material properties from measurements to predict acoustic energy at new source–receiver configurations.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2509.15946">Paper</a><a href="https://arxiv.org/pdf/2509.15946">PDF</a><a href="https://github.com/sh-lee97/dart">Code</a></div></div></li>
+<li class="publication"><div class="paper-copy"><a class="papertitle" href="https://ieeexplore.ieee.org/abstract/document/10096374">PHASEAUG: A Differentiable Augmentation for Speech Synthesis to Simulate One-to-Many Mapping</a>
+          <p>Junhyeok Lee, <strong>Seungu Han</strong>, Hyunjae Cho, Wonbin Jung</p>
+          <p><em>ICASSP</em>, 2023</p>
+<p class="paper-summary">Differentiable phase augmentation models the one-to-many nature of speech synthesis to reduce overfitting in neural vocoders.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2211.04610">Paper</a><a href="https://arxiv.org/pdf/2211.04610">PDF</a></div></div></li>
+<li class="publication"><div class="paper-copy"><a class="papertitle" href="https://arxiv.org/abs/2104.02321">NU-Wave: A Diffusion Probabilistic Model for Neural Audio Upsampling</a>
+          <p>Junhyeok Lee, <strong>Seungu Han</strong></p>
+          <p><em>Interspeech</em>, 2021</p>
+<p class="paper-summary">Diffusion-based audio super-resolution reconstructs 48 kHz waveforms from 16 kHz or 24 kHz speech.</p>
+<div class="paper-links" aria-label="Resources for this paper"><a href="https://arxiv.org/abs/2104.02321">Paper</a><a href="https://arxiv.org/pdf/2104.02321">PDF</a><a href="https://github.com/maum-ai/nuwave">Code</a></div></div></li></ol>
+    </section>
+    <section aria-labelledby="under-review">
+      <h2 id="under-review">Under Review</h2>
+      <ol class="publications"><li class="publication"><div class="paper-copy"><span class="papertitle">UNISE: Unified Noise-Invariant Learning for Speech Enhancement Toward Improved Content Preservation</span>
+          <p><strong>Seungu Han</strong>, Sungho Lee, Eungbeom Kim, Seaone Ok, Kyogu Lee</p>
+          <p class="status">Under Review</p></div></li>
+<li class="publication"><div class="paper-copy"><span class="papertitle">Interpreting and Reducing Hallucinations in Generative Speech Enhancement with Sparse Autoencoders</span>
+          <p><strong>Seungu Han</strong>, Kyogu Lee</p>
+          <p class="status">Under Review</p></div></li></ol>
+    </section>
+    <section aria-labelledby="background">
+      <h2 id="background">Background</h2>
+      <p class="background-summary">Seoul National University · Previously at Supertone and Maum AI</p>
+      <details>
+        <summary>Education, experience, competitions &amp; open source</summary>
     <section aria-labelledby="education">
       <h2 id="education">Education</h2>
       <div class="entry">
@@ -76,7 +165,6 @@
         <ul><li>2-year absence to fulfill mandatory military service (Aug. 2020 – Jul. 2022).</li></ul>
       </div>
     </section>
-
     <section aria-labelledby="experience">
       <h2 id="experience">Professional Experience</h2>
       <div class="entry">
@@ -96,69 +184,6 @@
         </ul>
       </div>
     </section>
-
-    <section aria-labelledby="publications">
-      <h2 id="publications">Publications</h2>
-      <h3>First-Author Publications</h3>
-      <ol class="publications">
-        <li class="publication">
-          <span class="papertitle">UNISE: Unified Noise-Invariant Learning for Speech Enhancement Toward Improved Content Preservation</span>
-          <p><strong>Seungu Han</strong>, Sungho Lee, Eungbeom Kim, Seaone Ok, Kyogu Lee</p>
-          <p class="status">Under Review</p>
-        </li>
-        <li class="publication">
-          <span class="papertitle">Interpreting and Reducing Hallucinations in Generative Speech Enhancement with Sparse Autoencoders</span>
-          <p><strong>Seungu Han</strong>, Kyogu Lee</p>
-          <p class="status">Under Review</p>
-        </li>
-        <li class="publication">
-          <span class="papertitle">Rethinking Speech Representation Aggregation in Speech Enhancement: a Phonetic Mutual Information Perspective</span>
-          <p><strong>Seungu Han</strong>, Sungho Lee, Kyogu Lee</p>
-          <p><em>ICASSP</em>, 2026</p>
-        </li>
-        <li class="publication highlight">
-          <a class="papertitle" href="https://arxiv.org/abs/2506.01460">Few-step Adversarial Schrödinger Bridge for Generative Speech Enhancement</a>
-          <p><strong>Seungu Han</strong>, Sungho Lee, Juheon Lee, Kyogu Lee</p>
-          <p><em>Interspeech</em>, 2025 <strong>(Oral)</strong></p>
-          <p><em>Nominated for Interspeech 2025 Best Student Paper Award.</em></p>
-        </li>
-        <li class="publication">
-          <a class="papertitle" href="https://arxiv.org/abs/2206.08545">NU-Wave 2: A General Neural Audio Upsampling Model for Various Sampling Rates</a>
-          <p><strong>Seungu Han</strong>, Junhyeok Lee</p>
-          <p><em>Interspeech</em>, 2022 <strong>(Oral)</strong></p>
-        </li>
-      </ol>
-
-      <h3>Co-Authored Publications</h3>
-      <ol class="publications">
-        <li class="publication">
-          <span class="papertitle">Toward Privacy-Preserving ASR: Speaker-Level Machine Unlearning</span>
-          <p>Seaone Ok, <strong>Seungu Han</strong>, Eungbeom Kim, Kyogu Lee</p>
-          <p><em>Interspeech</em>, 2026</p>
-        </li>
-        <li class="publication">
-          <span class="papertitle">Cross-Modal Bottleneck Fusion for Noise Robust Audio-Visual Speech Recognition</span>
-          <p>Seaone Ok, Min Jun Choi, Eungbeom Kim, <strong>Seungu Han</strong>, Kyogu Lee</p>
-          <p><em>ICASSP</em>, 2026</p>
-        </li>
-        <li class="publication">
-          <span class="papertitle">Differentiable Acoustic Radiance Transfer</span>
-          <p>Sungho Lee, Matteo Scerbo, <strong>Seungu Han</strong>, Min Jun Choi, Kyogu Lee, Enzo De Sena</p>
-          <p><em>IEEE Transactions on Audio, Speech and Language Processing</em></p>
-        </li>
-        <li class="publication">
-          <a class="papertitle" href="https://ieeexplore.ieee.org/abstract/document/10096374">PHASEAUG: A Differentiable Augmentation for Speech Synthesis to Simulate One-to-Many Mapping</a>
-          <p>Junhyeok Lee, <strong>Seungu Han</strong>, Hyunjae Cho, Wonbin Jung</p>
-          <p><em>ICASSP</em>, 2023</p>
-        </li>
-        <li class="publication">
-          <a class="papertitle" href="https://arxiv.org/abs/2104.02321">NU-Wave: A Diffusion Probabilistic Model for Neural Audio Upsampling</a>
-          <p>Junhyeok Lee, <strong>Seungu Han</strong></p>
-          <p><em>Interspeech</em>, 2021</p>
-        </li>
-      </ol>
-    </section>
-
     <section aria-labelledby="competitions">
       <h2 id="competitions">Competitions</h2>
       <div class="entry">
@@ -167,15 +192,16 @@
         <ul><li>2nd place in Mean Opinion Score (MOS) evaluation (subjective metric).</li></ul>
       </div>
     </section>
-
     <section aria-labelledby="open-source">
       <h2 id="open-source">Open Source Contributions</h2>
       <ul>
-        <li><a href="https://github.com/mindslab-ai/nu-wave-2">Official implementation of <strong>NU-Wave 2</strong></a> (315 stars).</li>
+        <li><a href="https://github.com/maum-ai/nuwave2">Official implementation of <strong>NU-Wave 2</strong></a> (315 stars).</li>
         <li><a href="https://github.com/Seungwoo0326/wavegrad2-unofficial">Unofficial implementation of <strong>WaveGrad2</strong></a> (111 stars), released prior to the official code.</li>
-        <li><a href="https://github.com/mindslab-ai/nu-wave">Official implementation of <strong>NU-Wave</strong></a> (283 stars).</li>
+        <li><a href="https://github.com/maum-ai/nuwave">Official implementation of <strong>NU-Wave</strong></a> (283 stars).</li>
       </ul>
       <p class="source-note">Star counts as listed in my résumé.</p>
+    </section>
+      </details>
     </section>
   </main>
 </body>
